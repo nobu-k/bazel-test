@@ -28,6 +28,13 @@ go_repository(
     version = "v1.1.5",
 )
 
+go_repository(
+    name = "com_github_makenowjust_heredoc",
+    importpath = "github.com/MakeNowJust/heredoc",
+    sum = "h1:cXCdzVdstXyiTqTvfqk9SDHpKNjxuom+DOlyEeQ4pzQ=",
+    version = "v1.0.0",
+)
+
 go_rules_dependencies()
 
 go_register_toolchains(version = "1.15.7")

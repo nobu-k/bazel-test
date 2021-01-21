@@ -4,6 +4,7 @@ go_binary(
     name = "hello",
     embed = [":hello_lib"],
     visibility = ["//visibility:public"],
+    x_defs = {"Version": "0.1.0"},
 )
 
 go_library(
@@ -11,5 +12,8 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/nobu-k/bazel-go-test/hello",
     visibility = ["//visibility:private"],
-    deps = ["@com_github_google_uuid//:go_default_library"],
+    deps = [
+        "@com_github_google_uuid//:uuid",
+        "@com_github_makenowjust_heredoc//:heredoc",
+    ],
 )
