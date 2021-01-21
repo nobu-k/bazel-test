@@ -4,7 +4,7 @@ go_binary(
     name = "hello",
     embed = [":hello_lib"],
     visibility = ["//visibility:public"],
-    x_defs = {"Version": "{HELLO_VERSION}"},
+    x_defs = {"Version": "{STABLE_HELLO_VERSION}"},
 )
 
 go_library(
