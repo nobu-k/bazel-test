@@ -1,0 +1,2 @@
+build --stamp --workspace_status_command=./scripts/versioning.sh
+run --stamp --workspace_status_command=./scripts/versioning.sh
