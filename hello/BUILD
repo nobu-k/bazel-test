@@ -1,5 +1,6 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 load("@io_bazel_rules_docker//go:image.bzl", "go_image")
+load("@io_bazel_rules_docker//container:container.bzl", "container_push")
 
 go_binary(
     name = "hello",
@@ -12,8 +13,16 @@ go_binary(
 go_image(
     name = "image",
     binary = ":hello",
-    tags = ["0.1.0"],
     visibility = ["//visibility:public"],
+)
+
+container_push(
+    name = "push",
+    image = ":image",
+    format = "Docker",
+    registry = "index.docker.io",
+    repository = "nobu/bazel-test",
+    tag = "0.1.0",
 )
 
 go_library(
