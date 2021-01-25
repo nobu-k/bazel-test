@@ -71,4 +71,4 @@ load(
     _go_image_repos = "repositories",
 )
 
-_go_image_repos()
+_go_image_repos() # For go_image_base

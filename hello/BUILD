@@ -1,18 +1,18 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
-load("@io_bazel_rules_docker//go:image.bzl", "go_image")
-load("@io_bazel_rules_docker//container:container.bzl", "container_push")
+load("@io_bazel_rules_docker//container:container.bzl", "container_image", "container_push")
 
 go_binary(
     name = "hello",
     embed = [":hello_lib"],
-    pure = "on",
     visibility = ["//visibility:public"],
     x_defs = {"Version": "{STABLE_HELLO_VERSION}"},
 )
 
-go_image(
+container_image(
     name = "image",
-    binary = ":hello",
+    base = "@go_image_base//image",
+    files = [":hello"],
+    entrypoint = ["/hello"], # "/hello" with out [] results in ["/bin/sh", "-c", "/hello"]
     visibility = ["//visibility:public"],
 )
 
