@@ -1,4 +1,4 @@
-module github.com/nobu-k/bazel-go-test
+module github.com/nobu-k/bazel-test
 
 go 1.15
 

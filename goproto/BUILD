@@ -10,7 +10,7 @@ proto_library(
 go_proto_library(
     name = "goproto",
     compilers = ["@io_bazel_rules_go//proto:go_grpc"],
-    importpath = "github.com/nobu-k/bazel-go-test/goproto",
+    importpath = "github.com/nobu-k/bazel-test/goproto",
     proto = ":proto",
     visibility = ["//visibility:public"],
 )

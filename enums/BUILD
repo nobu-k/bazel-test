@@ -6,6 +6,6 @@ go_library(
         "lib.go",
         "lib_string.go",
     ],
-    importpath = "github.com/nobu-k/bazel-go-test/enums",
+    importpath = "github.com/nobu-k/bazel-test/enums",
     visibility = ["//visibility:public"],
 )

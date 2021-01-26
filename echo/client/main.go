@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	pb "github.com/nobu-k/bazel-go-test/goproto"
+	pb "github.com/nobu-k/bazel-test/goproto"
 	"google.golang.org/grpc"
 )
 

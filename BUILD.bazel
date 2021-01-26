@@ -1,4 +1,4 @@
 load("@bazel_gazelle//:def.bzl", "gazelle")
 
-# gazelle:prefix github.com/nobu-k/bazel-go-test
+# gazelle:prefix github.com/nobu-k/bazel-test
 gazelle(name = "gazelle")

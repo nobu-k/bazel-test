@@ -5,7 +5,7 @@ import (
 
 	"github.com/MakeNowJust/heredoc"
 	"github.com/google/uuid"
-	"github.com/nobu-k/bazel-go-test/enums"
+	"github.com/nobu-k/bazel-test/enums"
 )
 
 var Version string
