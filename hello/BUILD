@@ -11,15 +11,15 @@ go_binary(
 container_image(
     name = "image",
     base = "@go_image_base//image",
+    entrypoint = ["/hello"],  # "/hello" with out [] results in ["/bin/sh", "-c", "/hello"]
     files = [":hello"],
-    entrypoint = ["/hello"], # "/hello" with out [] results in ["/bin/sh", "-c", "/hello"]
     visibility = ["//visibility:public"],
 )
 
 container_push(
     name = "push",
-    image = ":image",
     format = "Docker",
+    image = ":image",
     registry = "index.docker.io",
     repository = "nobu/bazel-test",
     tag = "0.1.0",
@@ -31,6 +31,7 @@ go_library(
     importpath = "github.com/nobu-k/bazel-go-test/hello",
     visibility = ["//visibility:private"],
     deps = [
+        "//enums",
         "@com_github_google_uuid//:uuid",
         "@com_github_makenowjust_heredoc//:heredoc",
     ],
