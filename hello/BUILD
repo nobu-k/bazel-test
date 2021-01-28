@@ -28,7 +28,7 @@ container_push(
 go_library(
     name = "hello_lib",
     srcs = ["main.go"],
-    importpath = "github.com/nobu-k/bazel-go-test/hello",
+    importpath = "github.com/nobu-k/bazel-test/hello",
     visibility = ["//visibility:private"],
     deps = [
         "//enums",
